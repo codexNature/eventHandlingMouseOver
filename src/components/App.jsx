@@ -7,7 +7,7 @@ function App() {
   const [isMouseOver, setMouseOver] = useState(false)
 
   function handleClick() {
-    setHeadingText("Welcome")
+    setHeadingText("Welcome!")
   }
 
   function handleMouseOver(){
