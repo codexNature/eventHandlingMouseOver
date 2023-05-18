@@ -8,13 +8,17 @@ function App() {
   const [name, setName] = useState("");
   const [addname, setAddname] = useState("")
 
-  function handleClick() {
+  function handleClick(event) {
     setHeadingText("Welcome")
     setAddname(name);
+
+    event.preventDefault();
   }
 
   function handleMouseOver(){
-    setMouseOver(true)
+    setMouseOver(true);
+
+    
   }
 
   function handleMouseOut() {
@@ -27,6 +31,7 @@ function App() {
   return (
     <div className="container">
       <h1>{headingText} {addname}</h1>
+      <form onSubmit={handleClick}>
       <input
       onChange={handleChange}
       type="text" 
@@ -34,12 +39,13 @@ function App() {
       value={name}  
       />
       <button 
+      type="submit"
       style={{backgroundColor: isMouseOver ? "black" : "white"}}
-      onClick={handleClick}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       
       >Submit</button>
+      </form>
     </div>
   );
 }
